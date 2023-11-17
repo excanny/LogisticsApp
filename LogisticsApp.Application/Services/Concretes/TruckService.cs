@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace LogisticsApp.Application.Services.Concretes
 {
@@ -20,6 +21,7 @@ namespace LogisticsApp.Application.Services.Concretes
 
         public async Task<BaseResponse> GetAllTrucks()
         {
+            //Get results using the generic repository pattern
             var trucks = await _truckRepository.GetAllAsync();
             if (trucks == null) return new BaseResponse { Status = false, Message = "No records found" };
 

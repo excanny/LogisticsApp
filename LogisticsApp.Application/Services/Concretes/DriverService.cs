@@ -20,6 +20,7 @@ namespace LogisticsApp.Application.Services.Concretes
 
         public async Task<BaseResponse> GetAllDrivers()
         {
+           //Get results using the generic repository pattern
            var drivers = await _driverRepository.GetAllAsync();
            if (drivers == null) return new BaseResponse { Status = false, Message = "No records found" }; 
 
